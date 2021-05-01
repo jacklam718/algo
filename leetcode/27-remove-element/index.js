@@ -4,15 +4,13 @@
  * @return {number}
  */
  var removeElement = function(nums, val) {
-  let count = 0
-  for (let i = 0, j = 0; j < nums.length; j++) {
+  let i = j = 0;
+  for (;j < nums.length; j++) {
     if (nums[j] !== val) {
       swap(nums, i++, j);
-    } else {
-      count++;
     }
   }
-  nums.length = nums.length - count;
+  return nums.length = i;
 };
 
 var swap = function(nums, i1, i2) {
