@@ -3,16 +3,15 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
  var moveZeroes = function(nums) {
-  let i = 0;
-  for (let j = 0; j < nums.length; j++) {
-    if (nums[j] !== 0) {
-      if (nums[i] === 0) {
-        // Swap
-        const val = nums[j];
-        nums[j] = nums[i];
-        nums[i] = val;
-      }
-      i++;
+  for (let lastNonZeroFoundAt = 0, cur = 0; cur < nums.length; cur++) {
+    if (nums[cur] !== 0) {
+      swap(nums, lastNonZeroFoundAt++, cur);
     }
   }
 };
+
+var swap = function(nums, i1, i2) {
+  const temp = nums[i1];
+  nums[i1] = nums[i2];
+  nums[i2] = temp;
+}
