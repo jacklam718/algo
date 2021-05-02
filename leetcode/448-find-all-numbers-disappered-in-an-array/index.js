@@ -3,10 +3,12 @@
  * @return {number[]}
  */
  var findDisappearedNumbers = function(nums) {
+  const length = nums.length;
   const missingNumbers = [];
+  nums = new Set(nums);
   
-  for (let n = 1; n < nums.length+1; n++) {
-    if (nums.indexOf(n) === -1) {
+  for (let n = 1; n < length+1; n++) {
+    if (!nums.has(n)) {
       missingNumbers.push(n);
     }
   }
