@@ -4,16 +4,20 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var rotate = function (nums, k) {
-  const len = nums.length;
-  k = k % nums.length;
+  const n = nums.length;
+  k = k % n;
+  let count = 0;
 
-  for (let left = len - 1, right = len - 1 + k; right >= 0; right--, left--) {
-    nums[right] = nums[left];
+  for (let i = 0; count < n; i++) {
+    let current = i;
+    let currentValue = nums[i];
+    do {
+      const next = (current + k) % n;
+      const nextValue = nums[next];
+      nums[next] = currentValue;
+      currentValue = nextValue;
+      current = next;
+      count++;
+    } while (i !== current);
   }
-
-  for (let left = k - 1, right = nums.length - 1; left >= 0; right--, left--) {
-    nums[left] = nums[right];
-  }
-
-  nums.length = len;
 };
