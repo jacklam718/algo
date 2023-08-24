@@ -5,24 +5,15 @@
  */
 var rotate = function (nums, k) {
   const len = nums.length;
-  let i = len - 1;
-  let right = len - 1 + k;
+  k = k % nums.length;
 
-  while (right >= 0) {
-    nums[right] = nums[i];
-    if (i === 0) {
-      i = len - 1;
-    }
-    i--;
-    right--;
+  for (let left = len - 1, right = len - 1 + k; right >= 0; right--, left--) {
+    nums[right] = nums[left];
   }
 
-  for (
-    let left = k - 1, right = nums.length - 1;
-    right >= len;
-    left--, right--
-  ) {
+  for (let left = k - 1, right = nums.length - 1; left >= 0; right--, left--) {
     nums[left] = nums[right];
   }
+
   nums.length = len;
 };
