@@ -2,7 +2,7 @@ var MyHashSet = function () {
   // Initial bucket size, this number is somewhat arbitrary can be adjusted
   // based on the specific use case and the expected number of elements
   this._size = 1000;
-  this.buckets = new Array(this._size).fill(null).map(() => new Array());
+  this._buckets = new Array(this._size).fill(null).map(() => new Array());
 };
 
 MyHashSet.prototype._hash = function (key) {
@@ -15,9 +15,9 @@ MyHashSet.prototype._hash = function (key) {
  */
 MyHashSet.prototype.add = function (key) {
   const hash = this._hash(key);
-  const exists = this.buckets[hash].includes(key);
+  const exists = this._buckets[hash].includes(key);
   if (!exists) {
-    this.buckets[hash].push(key);
+    this._buckets[hash].push(key);
   }
 };
 
@@ -27,9 +27,9 @@ MyHashSet.prototype.add = function (key) {
  */
 MyHashSet.prototype.remove = function (key) {
   const hash = this._hash(key);
-  const index = this.buckets[hash].indexOf(key);
+  const index = this._buckets[hash].indexOf(key);
   if (index !== -1) {
-    this.buckets[hash].splice(index, 1);
+    this._buckets[hash].splice(index, 1);
   }
 };
 
@@ -39,7 +39,7 @@ MyHashSet.prototype.remove = function (key) {
  */
 MyHashSet.prototype.contains = function (key) {
   const hash = this._hash(key);
-  return this.buckets[hash].includes(key);
+  return this._buckets[hash].includes(key);
 };
 
 /**
