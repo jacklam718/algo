@@ -1,8 +1,8 @@
 # My idea for this problem
 
-1. Creating Two Hash Tables: Creating two hash tables to map characters in s to characters in t and vice versa is a good approach. This allows you to track the mappings in both directions.
+1. Creating two hash tables to map characters in s to characters in t and vice versa is a good approach. This allows me to track the mappings in both directions.
 
-2. Checking the Hash Tables: Checking the hash tables to ensure that the current character is not already mapped to another character and that the mapping is consistent is a valid way to determine if the strings are isomorphic.
+2. Checking the hash tables to ensure that the current character is not already mapped to another character and that the mapping is consistent is a valid way to determine if the strings are isomorphic.
    
 
 ```
