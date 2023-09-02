@@ -18,7 +18,7 @@ var intersect = function (nums1, nums2) {
   for (let i = 0; i < n; i++) {
     if (freq2[nums1[i]] !== undefined) {
       const sum = Math.min(freq1[nums1[i]], freq2[nums1[i]]);
-      // Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
+      // Important requirement, each element in the result must appear as many times as it shows in both arrays.
       result = result.concat(new Array(sum).fill(null).map(() => nums1[i]));
       // Remove the element from the frequency map to avoid duplicates.
       freq2[nums1[i]] = undefined;
