@@ -40,3 +40,17 @@ var hash = (str) => {
   return hashStr;
 } 
 ```
+
+
+**The above version is still not efficient enough**
+Another version of optimization:
+
+Similar to the above version, create a projection `count` representing the count of a-z alphabet the occurrences e.g `eat -> 1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0`
+
+```javascript
+const count = Array(26).fill(0);
+for (let c of s) {
+  count[c.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+}
+const key = count.join(',');
+```
