@@ -4,12 +4,17 @@
  */
 var groupAnagrams = function (strs) {
   const buckets = {};
-  for (let i = 0; i < strs.length; i++) {
-    const key = strs[i].split("").sort().join("");
+  const projection = Array(26);
+  for (let s of strs) {
+    const count = projection.fill(0);
+    for (let c of s) {
+      count[c.charCodeAt(0) - "a".charCodeAt(0)]++;
+    }
+    const key = count.join(",");
     if (buckets[key]) {
-      buckets[key].push(strs[i]);
+      buckets[key].push(s);
     } else {
-      buckets[key] = [strs[i]];
+      buckets[key] = [s];
     }
   }
   return Object.values(buckets);
