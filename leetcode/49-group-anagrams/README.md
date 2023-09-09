@@ -11,7 +11,7 @@ This approach has a time complexity of `O(N K log K)`, where N is the length of 
 
 Space complexity is `O(N K)`, which is needed to store the buckets object and its arrays.
 
-<img width="600" src="https://github.com/jacklam718/algo/assets/5494638/a769d71a-7801-47e9-ae26-eb8f69a9bd9f"/>
+![Limnu_20230909 (1)](https://github.com/jacklam718/algo/assets/5494638/085e7729-cdbf-4b2b-aa9b-342d3e7723e9)
 
 
 **To optimize the complexity, the key is how to hash the key string**
