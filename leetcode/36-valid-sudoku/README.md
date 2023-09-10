@@ -6,14 +6,11 @@
 
 This is the core algorithm to detect if repetition in row, column or same 3x3 box
 ```javascript
-const boxStartRow = Math.floor(i / 3) * 3;
-const boxStartCol = Math.floor(j / 3) * 3;
-
 for (const [row, col] of hashmap[cell] || []) {
   if (
     (row === i) || // Check repetition if same row
     (col === j) || // Check repetition if same column
-    (Math.floor(row / 3) === Math.floor(boxStartRow / 3) && Math.floor(col / 3) === Math.floor(boxStartCol / 3)) // Check repetition if same 3x3 box
+    (Math.floor(row / 3) === Math.floor(i / 3) && Math.floor(col / 3) === Math.floor(j / 3)) // Check repetition if same 3x3 box
   ) {
     return false;
   }
