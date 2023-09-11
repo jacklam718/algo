@@ -22,10 +22,7 @@ var isValidSudoku = function (board) {
         }
       }
 
-      if (!hashmap[cell]) {
-        hashmap[cell] = [];
-      }
-
+      if (!hashmap[cell]) hashmap[cell] = [];
       hashmap[cell].push([i, j]);
     }
   }
