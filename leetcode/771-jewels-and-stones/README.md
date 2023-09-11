@@ -13,4 +13,4 @@ The algorithm would be `O(n + m)` where `n` is the length of elements in the sto
 2. iterate over the `stones` string, I check if stone in jewel set if it exists in the set the I add up 1 to the count
 3. I will repeat step 2 until I've looped through all the jewels. Finally, I will return the count stored in the variable.
 
-For the this approach, the time complexity is O(n) and the space complexity is O(m). Because I only iterate through the `stones` and only store `jewels` into a set.
+For the this approach, the time complexity is `O(n)` and the space complexity is `O(m)`. Because I only iterate through the `stones` and only store `jewels` into a set.
